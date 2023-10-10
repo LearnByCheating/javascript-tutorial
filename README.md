@@ -7,13 +7,13 @@ The Web version of the CheatSheet for JavaScript is at:<br>
 
 ------------------------------------------------------------
 
-## Tutorial Files and Folders
+## 1. Tutorial Files and Folders
 
 Each tutorial in the series includes example code. 
 
 To follow along, copy/paste or type the code in a JavaScript file. For the later tutorials and the project there are also HTML and module files.
 
-The code from each tutorial is also in this project in either a 
+The code from each tutorial is also in this project in either:
   - Stand-alone JavaScript files (e.g., arrays.js, classes.js, conditionals.js, etc.).
   - Or directories containing JavaScript, HTML, and module files (e.g., dom, errors, event-loop, etc.). 
 
@@ -23,9 +23,9 @@ There are also two Project folders where you use JavaScript and HTML to create a
 
 ------------------------------------------------------------
 
-## How to run the code from the tutorials
+## 2. How to run the code from the tutorials
 
-### Run JS statements in the Terminal with Node.js
+### 2a. Run JS statements in the Terminal with Node.js
 You can run JavaScript code snippets directly in the Terminal if you have Node.js installed. 
 
 Open your Command Line application. If you are using VS Code as your text editor, Click the Terminal menu and select New Terminal.
@@ -42,28 +42,40 @@ If it returns "Command not found" then you need to install Node.js. Go to [nodej
 
 ------------------------------------------------------------
 
-### Run JS files from the Terminal with Node.js
+### 2b. Run JS files from the Terminal with Node.js
 
 Put JavaScript code snippets in a JavaScript file. Then run the file with Node.js: `node filename`
 
 To view variable values, use `console.log()` to log variable and expression values to the Terminal.
 
+``` js
+const x = 7;
+const res = x + 3;
+console.log(res); // logs 10
+```
+
 ------------------------------------------------------------
 
-### Run JS files with VS Code Debugger using Node.js
+### 2c. Run JS files with VS Code Debugger using Node.js
 
 Put JavaScript code snippets in a JavaScript file then view variable values using the VS Code Debugger.
 
 - <b>Add Variables:</b> Assign variables to expression values you want to view.
-- <b>Breakpoints:</b> Enter Breakpoints by clicking left of the line number in the Editor window. Breakpoints are indicated with red dots. The code will pause on the breakpoint and continue when you click the Continue icon on the Debug Toolbar.
+- <b>Breakpoints:</b> Enter Breakpoints by clicking left of the line number in the Editor window. Breakpoints are indicated with red dots. The code will pause on the breakpoint and continue when you click the Continue icon on the Debug Toolbar. You can also use the `debugger;` statement to create a breakpoint.
 - <b>Open the Run and Debug sidebar:</b> Click the Run and Debug icon to open the Run and Debug sidebar.
 - <b>Run and Debug:</b> Click the Run and Debug button. Then select Node.js from the dropdown menu.
 - <b>View variable values:</b> When the code pauses at a breakpoint, all the variables can be viewed in the Debug sidebar grouped by scope (e.g., block, local, global). 
 - <b>The Debug Toolbar:</b> The Debug Toolbar includes icon buttons to continue to the next breakpoint, restart the debugger, and Stop the debugger.
 
+``` js
+const x = 7;
+const res = x + 3;
+debugger; // View variable x and res values in the Debug sidebar.
+```
+
 ------------------------------------------------------------
 
-### Run HTML and JS files with VS Code Debugger using Chrome or Edge
+### 2d. Run HTML and JS files with VS Code Debugger using Chrome or Edge
 
 Create an HTML file with JavaScript either embedded in the HTML file, or in a separate JavaScript file linked to the HTML file by the <i>script</i> tag.
 
@@ -78,10 +90,24 @@ Create an HTML file with JavaScript either embedded in the HTML file, or in a se
 
 ------------------------------------------------------------
 
-### Run the tutorial files in this repository
+### 2e. Run the tutorial files in this repository
 
 This repository has a file or folder for each tutorial. You can run the file with the VS Code Debugger using the same instructions as above. Insert breakpoints to view the variable values.
 
 In most of the files the topics are segregated into numbered <i>if</i> blocks. That keeps the variables and functions in their own scope. There is a topicId variable at the top of the file. Change the topicId value to the topic you want to run before running the debugger.
+
+``` js
+const topicId = 1; // Enter the current topic number.
+
+// 1. Topic name.
+if (topicId === 1) {
+  // Topic code goes here.
+}
+
+// 2. Topic name.
+if (topicId === 2) {
+  // Topic code goes here.
+}
+```
 
 ------------------------------------------------------------
