@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learn DOM</title>
+  </head>
+  <body>
+    <h1 class="text-center">Learn DOM</h1>
+    <p>Most common node types: document, element, text, comment</p>
+    <!-- DOM Diagram of this HTML Document -->
+    <img src="dom-nodes.png" alt="DOM Diagram" width="480">
+
+    <script>
+      console.log(document.nodeType, document.nodeName);
+      const h1 = document.querySelector('h1');
+      console.log(h1.nodeType, h1.nodeName);
+      const h1Text = h1.firstChild;
+      console.log(h1Text.nodeType, h1Text.nodeName, h1Text.nodeValue);
+    </script>
+  </body>
+</html>
+
+<!-- 
+  Run this file with LiveServer.
+  Then open Chrome Dev Tools to the Console tab. On Mac press fn + F12.
+-->

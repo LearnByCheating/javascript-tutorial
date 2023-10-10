@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="container">
+    <h1 id="heading">Change me on page load</h1>
+    <button id="btn">Clickme</button>
+    <button id="btn2">Double Clickme</button>
+    <button id="btn3">Hover over me</button>
+    <a href="https://www.example.com">example.com</a>
+    <a href="https://google.com">google.com</a>
+  </body>
+
+<script>
+const heading = document.getElementById('heading');
+const btn = document.getElementById('btn');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+
+document.addEventListener('DOMContentLoaded', () => {
+  heading.textContent = 'Events';
+  heading.classList.add('dark-theme', 'py-2', 'mb-0');
+});
+
+btn.addEventListener('click', () => { 
+  btn.classList.add('dark-theme')
+});
+btn2.addEventListener('dblclick', () => {
+  btn2.classList.toggle('dark-theme')
+});
+btn3.addEventListener('mouseenter', () => {
+  console.log('Hovered over button 3');
+  btn3.classList.toggle('dark-theme');
+}, { once: true });
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.nodeName === 'A') { // event.target is the clicked element
+    event.preventDefault();
+    event.target.classList.add('dark-theme', 'p-3px');
+    console.log(event.type, event.target);
+  }
+});
+</script>
+</html>

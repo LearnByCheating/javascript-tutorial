@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traverse the DOM</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Traverse the DOM</h1>
+      <ul id="list">
+        <li id="li-1">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+      <img width="400" class="block" src="images/traverse.jpg">
+    </div>
+  </body>
+</html>
+<script> // JAVASCRIPT
+// Get HTML elements by their IDs and assign them to a variable
+const list = document.getElementById('list');
+const li1 = document.getElementById('li-1');
+
+// Traverse the DOM and log the element.
+console.log(1, list.parentElement); // Go up one from the list element. Return the div element.
+console.log(2, list.previousElementSibling); // Go one element to the left. Return the h1 element.
+console.log(3, list.nextElementSibling); // Go one element to the right. Return the img element.
+console.log(4, list.childElementCount); // Returns 3
+console.log(5, list.firstElementChild); // Go down one level to the first child. Return the li-1 element.
+console.log(6, list.lastElementChild); // Go down one level to the last child. Return the li-3 element.
+console.log(7, list.children); // HTMLCollection (array-like object) of the li elements.
+console.log(8, list.children[1]); // Go down one level to the second child. Return the li-2 element.
+
+list.firstElementChild.classList.add('purple', 'bg-grey');
+console.log(9, li1.parentElement.parentElement); // Go up two levels. Returns the div element.
+console.log(10, li1.closest('div')); // From the li-1 element finds the first div element up the tree.
+</script>
+</html>

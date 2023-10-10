@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element Properties and Attributes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="container">
+    <h1>Element Properties and Attributes</h1>
+    <img id="diagram" src="images/elem.png" alt="Element diagram" width="200" height="134">
+    <p data-category="programming-languages">JavaScript</p>
+
+    <button id="btn" class="btn">Clickme</button>
+    <button id="btn2" class="btn">Clickme2</button>
+    <button id="btn3" class="btn">Clickme3</button>
+  </body>
+
+<script> // JAVASCRIPT
+const diagram = document.getElementById('diagram');
+const elem = document.querySelector('[data-category="programming-languages"]');
+
+btn.addEventListener('click', () => {
+  console.log(1, diagram.tagName);  // Returns "IMG"
+  console.log(2, diagram.alt); // Returns "Element diagram"
+  diagram.alt = 'HTML Element diagram'; // Sets the alt property to a new value.
+  console.log(3, diagram.alt); // Returns "HTML Element diagram"
+});
+
+btn2.addEventListener('click', () => {
+  console.clear();
+  console.log(1, diagram.hasAttribute('height')); // Logs true
+  console.log(2, diagram.getAttribute('width')); // Logs 200
+  diagram.setAttribute('width', 300); // Sets width property to 300
+  diagram.removeAttribute('height'); // Removes the height attribute
+});
+
+btn3.addEventListener('click', () => {
+  console.clear();
+  console.log(1, elem.hasAttribute('data-category')); // Returns true
+  console.log(2, elem.getAttribute('data-category')); // Returns 'programming-languages'
+  elem.setAttribute('data-category', 'technology'); // Sets data-category to "technology"
+  console.log(3, elem.getAttribute('data-category')); // Returns 'technology'
+  elem.removeAttribute('data-category'); // Removes the data-category attribute
+  });
+</script>
+</html>

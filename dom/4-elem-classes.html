@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element class attribute</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="container-narrow dark-theme">
+    <h1 id="heading" class="center mt-30">Element class attribute</h1>
+    <button id="btn">Change classes</button>
+  </body>
+
+<script>
+const heading = document.getElementById('heading');
+const btn = document.getElementById('btn');
+
+console.log(document.body.className); // 'container-narrow dark-theme'
+console.log(heading.className); // 'center mt-30'
+heading.className = 'center mt-30 underline'; // Set class attribute value.
+console.log(heading.classList.contains('center')); // true
+
+btn.addEventListener('click', () => {
+  document.body.className = 'container-wide light-theme';
+  heading.classList.remove('center', 'mt-30');
+  heading.classList.add('mt-50');
+  heading.classList.toggle('underline');
+});
+</script>
+</html>

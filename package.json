@@ -1,0 +1,13 @@
+{
+  "name": "javascript-tutorial",
+  "description": "Example code for the JavaScript CheatSheet and accompanying tutorial series.",
+  "homepage": "https://www.learnbycheating.com/subjects/javascript",
+  "keywords": ["JavaScript"],
+  "author": "LearnByCheating.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

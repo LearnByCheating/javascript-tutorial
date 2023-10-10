@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="event-loop.js" defer></script>
+</head>
+<body class="container">
+  <h1 class="mt-1">JavaScript <small>Call Stack and Event Loop</small></h1>
+
+  <hr>
+  <button id="btn" class="btn btn-sm btn-dark">Clickme</button>
+  <div id="result"></div>
+  <hr>
+
+  <p class="my-3">
+    <img id="diagram" src="js-event-loop-browser.png" alt="Event Loop Diagram" height="250">
+    <img id="diagram-node" src="js-event-loop-node.png" alt="Event Loop Diagram" height="250" class="ms-3 me-0">
+  </p>
+  
+  <div id="msg" style="cursor: pointer"></div>
+
+  <div id="definitions">
+    <h5 id="close-definitions" style="cursor: pointer" class="mb-1">Definitions:</h5>
+    <ul class="list-group">
+      <li class="list-group-item py-1"><b>JavaScript:</b> Scripting language, consists of core JS plus Web APIs.</li>
+      <li class="list-group-item py-1"><b>Runtime:</b> Stage of the programming lifecycle when the program is running.</li>
+      <li class="list-group-item py-1"><b>Runtime Environment:</b> Environment in which JS is run. Generally the Browser or Node.js.</li>
+      <li class="list-group-item py-1"><b>Core JavaScript:</b> ECMAScript. Excludes Web APIs.</li>
+      <li class="list-group-item py-1"><b>JS Engine:</b> An interpreter that parses and executes a JS program. e.g., Chrome V8 Engine.</li>
+      <li class="list-group-item py-1"><b>API:</b> Interface for programs to communicate with each other.</li>
+      <li class="list-group-item py-1"><b>Web APIs:</b> Browser I/O APIs such as DOM, fetch, storage, timers, etc.</li>
+      <li class="list-group-item py-1"><b>Node I/O APIs:</b> Core Node.js modules and 3rd party NPM packages.</li>
+      <li class="list-group-item py-1"><b>Heap Memory:</b> Region of memory, mostly unstructured, that stores objects/functions.</li>
+      <li class="list-group-item py-1"><b>Call Stack:</b> Stack data structure of currently executing nested function. Uses LIFO.</li>
+      <li class="list-group-item py-1"><b>Events:</b> Actions or occurrences that happen to HTML elements like a button click or page load.</li>
+      <li class="list-group-item py-1"><b>Callback Queue:</b> On event, the message and associated callback are added to the Queue.
+      <li class="list-group-item py-1"><b>Event Loop:</b> Monitors Call Stack and Queue. Places Callback on stack when empty.
+      <li class="list-group-item py-1"><b>Single Treaded:</b> Has one call stack and one memory heap. Code is executed in sequence.</li>
+      <li class="list-group-item py-1"><b>Synchronous:</b> Blocking code executed in sequence. One line at a time.</li>
+      <li class="list-group-item py-1"><b>Asynchronous:</b> Non-blocking. Doesn't wait for function result before moving to next line.</li>
+      <li class="list-group-item py-1"><b>Microtask queue:</b> Similar to Callback Queue but for Promises.</li>
+    </ul>
+  </div>
+</body>
+</html>

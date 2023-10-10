@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learn DOM</title>
+  </head>
+  <body>
+    <h1 class="text-center">Learn DOM</h1>
+    <p>
+      Blah blah.
+      <button id="shrink-btn">Shrink Image</button>
+    </p>
+    <img id="dom-diagram" src="dom.png" alt="DOM Diagram" width="480" style="border-radius: 5px;">
+    
+    <script>
+      const domDiagram = document.getElementById('dom-diagram');
+      const shrinkBtn = document.getElementById('shrink-btn');
+      shrinkBtn.addEventListener('click', () => {
+        console.log(1, domDiagram.nodeName);
+        console.log(2, domDiagram.id);
+        console.log(3, domDiagram.style.borderRadius);
+        domDiagram.width = 200;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+  Run this file with LiveServer.
+  Then open Chrome Dev Tools to the Console tab. On Mac press fn + F12.
+-->

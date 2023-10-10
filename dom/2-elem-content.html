@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element Content</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="container">
+    <h1 id="heading">Heading text</h1>
+    <p id="p">Some text <small>and an HTML element</small></p>
+
+    <div id="list"></div>
+
+    <button id="btn" class="btn">textContent</button>
+    <button id="btn2" class="btn">innerHTML</button>
+    <button id="btn3" class="btn">outerHTML</button>
+    <button id="btn4" class="btn">textContent</button>
+  </body>
+
+<script> // JAVASCRIPT
+const heading = document.getElementById('heading');
+const p = document.getElementById('p');
+const btn = document.getElementById('btn');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+const btn4 = document.getElementById('btn4');
+const listElem = document.getElementById('list');
+
+// textContent
+btn.addEventListener('click', () => {
+  console.log(heading.textContent); // Returns "Heading text"
+  heading.textContent = ''; // Clears the heading content.
+  heading.textContent = 'Heading text modified'; // Changes the text in the element.
+});
+
+// innerHTML
+btn2.addEventListener('click', () => {
+  console.log(p.innerHTML); // Returns "Some text <small>and an HTML element</small>"
+  p.innerHTML = 'Modified text <b class="purple">modified HTML element</b>'; // Changes the element HTML content.
+});
+
+// outerHTML
+btn3.addEventListener('click', () => {
+  console.log(heading.outerHTML); // returns '<h1 id="heading">Heading text</h1>'
+  heading.outerHTML = '<h2 id="heading" class="purple">h2) Heading text modified</h2>';
+  // changes the tag from h1 to h2, adds a class to it, and modifies the text.
+});
+
+btn4.addEventListener('click', () => {
+  // Array of list items
+  const listArray = ['Item 1', 'Item 2', 'Item 3'];
+
+  // Create an empty string variable.
+  let listItems = '';
+  // Iterate over the array creating an HTML list item element for each item in the array
+  listArray.forEach((item) => {
+    listItems += `<li>${item}</li>`; 
+  });
+
+  // Set the innerHTML of the list element with the listItems string of HTML.
+  listElem.innerHTML = listItems; 
+});
+</script>
+</html>

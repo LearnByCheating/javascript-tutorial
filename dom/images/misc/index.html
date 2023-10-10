@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style type="text/css">
+      th, td { border: 1px solid black; padding: 0px 10px; width: 152px; }
+      .pre { font-size: .7rem; white-space: pre-wrap; background-color: lightgrey; }
+      .list-group-item { background-color: #add8e6; }
+      .bg-lightblue { background-color: #add8e6; }
+    </style>
+    <title>Learn DOM</title>
+    <!-- 1b. Script Element -->
+    <script src="dom.js" defer></script>
+  </head>
+  <body class="container">
+    <h1 id="heading" class="h1 mt-3 text-center" data-subject="dom">JavaScript DOM</h1>
+    <hr>
+    
+    <!-- 1. DOM Overview -->
+    <div id="dom-overview-gp">
+      <h3 class="h3" style="padding: 5;" title="DOM">
+        1) DOM Overview
+      </h3>
+      <button id="dom-tree" class="btn btn-sm btn-outline-dark">DOM Tree</button>
+      <button id="dom-api" class="btn btn-sm btn-outline-dark">DOM API</button>
+      <button id="dom-nodes" class="btn btn-sm btn-outline-dark">DOM Nodes</button>
+      <hr> 
+    </div>
+
+    <!-- 2. Document Interface: Get elements using Selectors -->
+    <div id="document-interface-gp">
+      <h3 class="h3">2) Document Interface</h3>
+      <button id="sel-single-dom-elem" class="btn btn-sm btn-outline-dark">Get Single Element</button>
+      <button id="sel-multiple-dom-elems" class="btn btn-sm btn-outline-dark">Get Multiple Elements</button>  
+
+      <!-- Show Example HTML -->
+      <div id="_2-ex-html" style="display: none">
+        <h5 class="h5 ms-3 mt-3 mb-1"></h5>
+        <pre class="card card-body pre"></pre>
+      </div>
+
+<!-- Example 2b -->
+<div id="link-examples" class="card card-body bg-info" style="display: none">
+<a id="l1" class="link-dark" href="#" data-ex="links">Link1</a>
+
+<a id="l2" class="link-dark" href="#" data-ex="links">Link2</a>        
+</div>
+      <hr>
+    </div>
+
+    <!-- 3. Element Interface: Get/Set Values -->
+    <div id="get-set-values-gp">
+      <h3 id="elem-interface-heading" class="h3">3) Element Interface: <small>Get/Set Values</small></h3>
+      <button id="elem-content" class="btn btn-outline-dark btn-sm">Content</button>
+      <button id="elem-properties" class="btn btn-outline-dark btn-sm">Properties</button>
+      <button id="elem-attributes" class="btn btn-outline-dark btn-sm">Attributes</button>
+      <button id="elem-classes" class="btn btn-outline-dark btn-sm">Classes</button>
+      <button id="elem-style" class="btn btn-outline-dark btn-sm">Style</button>
+
+      <!-- Show Example HTML -->
+      <div id="_3-ex-html" style="display: none">
+        <h5 class="h5 ms-3 mt-3 mb-1"></h5>
+        <pre class="card card-body pre"></pre>
+      </div>
+
+      <p id="3-img-container">
+        <img id="html-elem-img" width="300" style="display: none; margin: 10px auto;" class="img-thumbnail" src="./html-elem.png" alt="HTML element diagram">
+      </p>
+      <hr>
+    </div>
+
+    <!-- 4. Traverse the DOM -->
+    <div id="traverse-dom-gp">
+      <h3 id="traverse-dom-heading" class="h3">4) Traverse the DOM</h3>  
+      <button id="traverse-dom" class="btn btn-outline-dark btn-sm">Elements</button>
+      <button id="traverse-dom-nodes" class="btn btn-outline-dark btn-sm">Nodes</button>
+      
+      <!-- Show Example HTML -->
+      <div id="_4-ex-html" style="display: none">
+        <h5 class="h5 ms-3 mt-3 mb-1"></h5>
+        <pre class="card card-body pre"></pre>
+      </div>
+
+<!-- 4a Example -->
+<table id="4a-example" class="mt-2" style="display: none">
+  <thead id="parent-prev-elem-sibling">
+    <tr>
+      <th colspan="4">Traverse DOM Example</td>
+    </tr>
+  </thead>
+  <tbody id="parent-elem">
+    <tr id="elem">
+      <td id="1st-elem-child">x</td>
+      <td id="2nd-elem-child">x</td>
+      <td id="last-elem-child">x</td>
+    </tr>
+    <tr id="next-elem-sibling">
+      <td id="new-prev-elem-sibling">x</td>
+      <td id="new-base">x</td>
+      <td id="new-next-elem-sibling">x</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 4b Example -->
+<div id="4b-example" style="display: none">
+<div id="_4b-base-node" class="card card-body bg-lightblue">
+  <!-- this is a comment node -->
+  <b id="new-base-node">This is an element node.</b>    
+  This is a text node.
+</div>
+<img class="w-100 mt-2" src="./nodes.png">
+</div>
+<!-- End Examples -->
+      <hr>  
+    </div>
+
+    <!-- 5. Elements: Create/Insert/Replace/Remove -->
+    <div id="elems-create-insert-gp">
+      <h3 class="h3">5) Create, Insert, Remove Elements</h3>
+      <button id="create-elem" class="btn btn-sm btn-outline-dark">Create Insert Elements</button>
+
+      <!-- Show Example HTML -->
+      <div id="_5-ex-html" style="display: none">
+        <h5 class="h5 ms-3 mt-3 mb-1"></h5>
+        <pre class="card card-body pre"></pre>
+      </div>
+
+      <!-- 5 Example -->
+      <div><ul id="list" class="list-group"></ul></div>
+      <hr>
+    </div>
+
+    <!-- 6. EventTarget Interface Events -->
+    <div id="events-gp">
+      <h3 id="events-heading" class="h3">6) Events</h3>
+      <p id="event-buttons" data-propagation="parent">
+        <button id="show-hide" class="btn btn-sm btn-outline-dark">
+          show-hide
+        </button>
+        <button id="dblclick" class="btn btn-sm btn-outline-dark">
+          Hover
+        </button>
+        <span id="prop-parent">
+          <button id="prop-child" class="btn btn-sm btn-outline-dark">
+            Propagation
+          </button>
+        </span>
+        <button onclick="this.remove()" class="btn btn-sm btn-outline-dark">
+          Inline Click
+        </button>
+      </p>
+      <!-- Show Example HTML -->
+      <pre id="_6-ex-html" class="card card-body pre" style="display: none;"></pre>
+      <hr>
+    </div>
+
+    <!-- 7. Forms -->
+    <div id="dom-overview-gp">
+      <h3 class="h3">7) Forms</h3>
+      <button id="forms" class="btn btn-sm btn-outline-dark">Forms</button>
+      <hr> 
+    </div>
+
+    <!-- 1b. Script Element -->
+    <script type="text/javascript">
+      console.log(1, 'This script is directly inside the HTML document.\n');
+    </script>
+    <script src="dom-empty-file.js"></script>
+  </body>
+</html>

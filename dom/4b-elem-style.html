@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element style attribute</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body style="margin: 10px 20%; background-color: black; color: white;">
+    <h1 id="heading" style="text-align: center; margin-top: 30px;">Element style attribute</h1>
+    <button id="btn">Change style</button>
+  </body>
+
+<script>
+const heading = document.getElementById('heading');
+const btn = document.getElementById('btn');
+
+console.log(document.body.style.cssText); // 'margin: 10px 20%; background-color: black; color: white;'
+console.log(heading.style.cssText); // 'text-align: center; margin-top: 30px;'
+console.log(heading.style.textAlign); // 'center'
+console.log(heading.style.textAlign === 'center'); // true
+console.log(getComputedStyle(heading).fontSize); // '32px'
+
+btn.addEventListener('click', () => {
+  document.body.style.cssText = 'margin: 10px 8px; background-color: whitesmoke; color: black;';
+  heading.style.marginTop = '50px';
+  heading.style.textDecoration = 'underline';
+  heading.style.textAlign = '';
+});
+</script>
+</html>

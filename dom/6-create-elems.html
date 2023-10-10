@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elements - Create/Insert/Replace/Remove</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="container">
+    <h1>Elements: <small>Create/Insert/Replace/Remove</small></h1>
+    <ul id="list">
+      <li id="li-1">First Item.</li>
+    </ul>
+    <button id="btn" class="btn">Replace item</button>
+  </body>
+<script>
+const list = document.getElementById('list');
+const li1 = document.getElementById('li-1');
+const btn = document.getElementById('btn');
+
+const li2 = document.createElement('li'); 
+li2.className = 'purple bg-grey';
+li2.id = 'li-2';
+li2.textContent = 'Second item.';
+
+// Use one of the below:
+list.prepend(li2); // Adds li2 as the first element in the list.
+// list.append(li2); // Adds li2 as the last element in the list.
+// li1.insertAdjacentElement('beforebegin', li2); // Inserts li2 before li1.
+// li1.insertAdjacentElement('afterend', li2); // Inserts li2 after li1.
+
+const li3 = '<li id="li-3" class="purple bg-grey">Third item.</li>';
+// Use one of the below:
+// li1.insertAdjacentHTML('beforebegin', li3); // Inserts li3 before li1.
+li1.insertAdjacentHTML('afterend', li3); // Inserts li3 after li1.
+
+btn.addEventListener('click', () => {
+  const li4 = document.createElement('li'); 
+  li4.className = 'dark-theme';
+  li4.textContent = 'Replacement item.';
+  list.replaceChild(li4, li1); // Replaces li1 with li2
+  btn.remove(); // Removes the button element
+});
+
+
+</script>
+</html>

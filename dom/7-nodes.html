@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Nodes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <h1>DOM Nodes</h1>
+    <p id="p">
+      <!-- this is a comment node -->
+      <b>Text node inside b element.</b>
+      Text node inside p element.
+    </p>
+    <img src="images/dom-node-tree.jpg" alt="DOM Nodes diagram" class="block" width="600">
+    <button id="btn" class="btn">Change</button>
+
+<script>
+const p = document.getElementById('p');
+const btn = document.getElementById('btn');
+
+console.log(1, p.nodeType, p.nodeName); // 1 P
+console.log(2, p.childNodes.length); // 5 
+console.log(3, p.firstChild.nodeType, p.firstChild.nodeName) //3 #text
+console.log(4, p.childNodes[1].nodeType, p.childNodes[1].nodeName)//8 #comment
+console.log(5, p.childNodes[2].nodeType, p.childNodes[2].nodeName)//3 #text
+console.log(6, p.childNodes[3].nodeType, p.childNodes[3].nodeName); // 1 B
+console.log(7, p.lastChild.nodeType, p.lastChild.nodeName, p.lastChild.nodeValue); // 3 #text "\n      This is a text node.\n"
+
+// Get the bold element and properties of its text node.
+const b = p.childNodes[3];
+console.log(8, b.firstChild.nodeType, b.firstChild.nodeName, b.firstChild.nodeValue); // 3 #text "This is a text node inside a bold element node."
+
+btn.addEventListener('click', () => {
+  p.removeChild(p.childNodes[4]); // Removes 5th child node of the p element (a text node).
+
+  const newTextNode = document.createTextNode('New text node 1. ');
+  p.insertBefore(newTextNode, p.childNodes[3]); // Inserts node before the bold element.
+  const newTextNode2 = document.createTextNode(' New text node 2.');
+  p.appendChild(newTextNode2); // Inserts node as the last child of the p element.
+});
+</script>
+  </body>
+</html>
