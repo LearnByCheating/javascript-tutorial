@@ -28,9 +28,9 @@ There are also two Project folders where you use JavaScript and HTML to create a
 ### 2a. Run JS statements in the Terminal with Node.js
 You can run JavaScript code snippets directly in the Terminal if you have Node.js installed. 
 
-Open your Command Line application. If you are using VS Code as your text editor, Click the Terminal menu and select New Terminal.
+Open your Terminal application. If you are using VS Code as your text editor, Click the Terminal menu and select New Terminal.
 
-Open the node application by entering: `node`
+Open the Node.js Shell application by entering: `node`
 
 If Node.js is installed on your computer it will give you a prompt. Then you can just start entering JavaScript statements.  
 ``` js
@@ -75,22 +75,7 @@ debugger; // View variable x and res values in the Debug sidebar.
 
 ------------------------------------------------------------
 
-### 2d. Run HTML and JS files with VS Code Debugger using Chrome or Edge
-
-Create an HTML file with JavaScript either embedded in the HTML file, or in a separate JavaScript file linked to the HTML file by the <i>script</i> tag.
-
-- <b>Add Variables:</b> In the JavaScript, assign variables to expression values you want to view.
-- <b>Breakpoints:</b> Enter Breakpoints by clicking left of the line number in the Editor window. Breakpoints are indicated with red dots. The code will pause on the breakpoint and continue when you click the Continue icon on the Debug Toolbar.
-- <b>Open the Run and Debug sidebar:</b> Click the Run and Debug icon to open the Run and Debug sidebar.
-- <b>Swith to the HTML file:</b> Open the HTML file in the editor.
-- <b>Run and Debug:</b> Click the Run and Debug button. Then select Web App (Chrome) or Web App (Edge).
-- <b>View variable values:</b> When the code pauses at a breakpoint, all the variables can be viewed in the Debug sidebar grouped by scope (e.g., block, local, global).
-- <b>The Debug Toolbar:</b> The Debug Toolbar includes icon buttons to continue to the next breakpoint, restart the debugger, and stop the debugger.
-- <b>View console logs:</b> Since the debugger is running in the Browser, to view console logs open the Console with command: Option + ⌘ + J (on macOS), or Shift + CTRL + J (on Windows/Linux). Select the console tab.
-
-------------------------------------------------------------
-
-### 2e. Run the tutorial files in this repository
+### 2d. Run the tutorial files in this repository
 
 This repository has a file or folder for each tutorial. You can run the file with the VS Code Debugger using the same instructions as above. Insert breakpoints to view the variable values.
 
@@ -111,3 +96,50 @@ if (topicId === 2) {
 ```
 
 ------------------------------------------------------------
+## 3. How to run the code with the browser
+Some of the tutorials include Web APIs so the JavaScript file must either be embedded directly in an HTML file inside script tags:<br>
+`<script>JS Code here</script>`
+
+Or linked to one: `<script src="filename"></script>`
+
+The JavaScript code is executed in the browser environment.
+
+Below are three wasy to run JavaScript files connected to an HTML file.
+
+------------------------------------------------------------
+
+### 3a. Open the HTML file with the browser.
+Open the browser > click the file menu > open the index.html or other HTML file. The HTML file should open as a web page in your browser. 
+
+Or just double click the index.html file in Mac Finder or Windows Explorer. 
+
+------------------------------------------------------------
+
+### 3b. Launch the web page with Live Server.
+If you are using the VS Code text editor: 
+- Install the Live Server extension if it is not already installed.
+- Open the index.html file in the text editor. 
+- Right click anywhere in the editor and select "Open with Live Server". The index.html page will open in the browser.
+
+------------------------------------------------------------
+
+### Use the browser's Developer Tools to view console logs
+To view console logs you need to open your browser's Developer Tools.
+In the browser window enter the command:
+- Option + ⌘ + J (on macOS)
+- Shift + CTRL + J (on Windows/Linux)
+
+Select the Console tab if it is not already selected.
+
+------------------------------------------------------------
+
+### 3c. Run HTML and JS files with VS Code Debugger using Chrome or Edge
+
+To run the VS Code Debugger in the browser environment:
+- Open the HTML file in the text editor. 
+- <b>Open the Run and Debug sidebar:</b> Click the Run and Debug icon to open the Run and Debug sidebar.
+- <b>Run and Debug:</b> Click the Run and Debug button. Then select Web App (Chrome) or Web App (Edge).
+
+You can add breakpoints in the Editor window and view variable values in the Debug sidebar Variables panel. 
+
+Click the Debug Toolbar icons to navigate through the code. 
